@@ -4,7 +4,6 @@ import { userData } from "../components/dummyData";
 import UserDashBoard from "./UsersDashBoard";
 import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";
-// import SideBar from "../components/SideBar";
 import "./Home.css"
 
 
@@ -12,7 +11,6 @@ function Home() {
  
   return (
     <div className="col-10">
-      {/* <SideBar /> */}
      <div className="home">
      
       <div>
@@ -21,7 +19,6 @@ function Home() {
         <WidgetSm/>
         <WidgetLg/>
       </div>
-     {/* <UserDashBoard/> */}
     </div>
     </div>
     </div>

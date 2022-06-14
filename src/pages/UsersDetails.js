@@ -13,7 +13,7 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import "./UsersDetails.css";
-// import UserApi from "../../api/UserApi";
+
 
 
 export default function User() {
@@ -25,9 +25,7 @@ export default function User() {
 
 
   useEffect(() => {
-    // console.log("I am in useeffect details")
-    //     let data = JSON.parse(window.localStorage.getItem("userdata"))
-    //     let newData = data.data.results
+
 console.log("Inside useeffect details")
         if(params.id){
             
@@ -35,17 +33,12 @@ console.log("Inside useeffect details")
       
             let normalId = dat.login.uuid.replace(/\s+/g, '')
             let paramId = params.id.replace(/\s+/g, '')
-            console.log(normalId)
-            console.log(paramId)
-            // console.log("I am UUID",dat.login.uuid.replace(/\s+/g, '').length)
-            // console.log("I am params id", params.id.replace(/\s+/g, '').length)
+ 
+      
            
             if (normalId === paramId) {
-              console.log(true)
-              console.log(dat)
               setDetailUser(dat)
-              // console.log(Array.isArray(dat))
-              // setUser(dat)
+    
            
             }
             
@@ -57,7 +50,7 @@ console.log("Inside useeffect details")
 
    if(detailUser === undefined) return null;
  console.log(detailUser)
-  //   console.log("I am below useeffect")
+
   return (
     <div className="user col-10">
 

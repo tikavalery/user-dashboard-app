@@ -12,21 +12,18 @@ export const DataProvider = ({children}) =>{
     const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-    // console.log(users)
-    // console.log(page)
-    // console.log(totalPages)
 
 
     useEffect(() => {
-        // console.log("In useeffect")
+      
         const fetchUsers = async () => {
           setLoading(true);
             const res = await axios.get('https://randomuser.me/api/?results=100');
-            // console.log(res)
+       
           setLoading(false);
           window.localStorage.setItem("userdata", JSON.stringify(res))
           setUsers(res.data.results);
-        //   window.localStorage.setItem("userdata", JSON.stringify(users))
+            
           setTotalPages(Math.ceil(res.data.results.length / USER_PER_PAGE));
         };
         fetchUsers();
@@ -41,7 +38,7 @@ export const DataProvider = ({children}) =>{
    
     }
 
-    // console.log(state)
+
 
     return (
         <GlobalState.Provider value={state}>

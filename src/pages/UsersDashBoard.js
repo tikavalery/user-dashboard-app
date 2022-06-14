@@ -7,44 +7,29 @@ import {GlobalState} from '../GlobalState'
 
 function UserDashBoard() {
   const state = useContext(GlobalState)
-  console.log(state)
   const [users, setUsers] = state.users
-
    const [page, setPage] = state.page
   const [totalPages, setTotalPages] = state.totalPages
 
   const [loading, setLoading] = useState(false);
- 
-console.log(users)
-  // useEffect(() => {
-  //   console.log("In useeffect")
-  //   const fetchUsers = async () => {
-  //     setLoading(true);
-  //     const res = await axios.get('https://randomuser.me/api/?results=100');
-  //     setLoading(false);
-  //     window.localStorage.setItem("userdata", JSON.stringify(res))
-  //     // setUsers(res.data.results);
-  //     window.localStorage.setItem("userdata", JSON.stringify(users))
-  //     setTotalPages(Math.ceil(res.data.results.length / USER_PER_PAGE));
-  //   };
-  //   fetchUsers();
-  // },[]);
 
-  console.log("After useeffect")
+
+
   const handleClick = num => {
     setPage(num);
   }
 
   const handlePrevious = num => {
     let previousPage = page - 1
-    console.log(page)
+
   }
-// console.log(page)
+
   return (
     <div className='col-10' >
-      <h1>Users Dashboard</h1>
-      <button onClick ={handlePrevious} >Show Previous results</button>
-      <p>Page {page}</p>
+      <h4>Users Dashboard</h4>
+      {/* <button onClick={handlePrevious} >Show Previous results</button> */}
+      <Pagination totalPages={totalPages} handleClick={handleClick} />
+     
       {loading ? <p>Loading...</p> : <>
       <table class="table table-striped">
 <thead>
@@ -54,7 +39,7 @@ console.log(users)
               <th>Email</th>
               <th>City</th>
     <th>Gender</th>
-              <th>Date of Birth</th>
+           
               <th>View More</th>
   </tr>
 </thead>
@@ -62,7 +47,7 @@ console.log(users)
             <Users users={users} page={page} />
             </tbody>
 </table>
-        <Pagination totalPages={totalPages} handleClick={handleClick} />
+<p>Page {page}</p>
       </> }
     </div>
   );

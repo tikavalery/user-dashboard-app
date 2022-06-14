@@ -6,25 +6,25 @@ export default function WidgetLg() {
   };
   return (
     <div className="widgetLg">
-      <h3 className="widgetLgTitle">Latest transactions</h3>
+      <h3 className="widgetLgTitle">Waiting list members and status</h3>
       <table className="widgetLgTable">
         <tr className="widgetLgTr">
-          <th className="widgetLgTh">Customer</th>
-          <th className="widgetLgTh">Date</th>
-          <th className="widgetLgTh">Amount</th>
+          <th className="widgetLgTh">Name</th>
+          <th className="widgetLgTh">Date of application</th>
+          <th className="widgetLgTh">Application fee</th>
           <th className="widgetLgTh">Status</th>
         </tr>
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
             <img
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="https://randomuser.me/api/portraits/thumb/men/13.jpg"
               alt=""
               className="widgetLgImg"
             />
-            <span className="widgetLgName">Susan Carol</span>
+            <span className="widgetLgName">Banadzem Berinyny Valery</span>
           </td>
           <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
+          <td className="widgetLgAmount">$60.00</td>
           <td className="widgetLgStatus">
             <Button type="Approved" />
           </td>
@@ -32,14 +32,14 @@ export default function WidgetLg() {
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
             <img
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="https://randomuser.me/api/portraits/thumb/women/12.jpg"
               alt=""
               className="widgetLgImg"
             />
-            <span className="widgetLgName">Susan Carol</span>
+            <span className="widgetLgName">Morgan Roberts</span>
           </td>
           <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
+          <td className="widgetLgAmount">$60.00</td>
           <td className="widgetLgStatus">
             <Button type="Declined" />
           </td>
@@ -47,14 +47,14 @@ export default function WidgetLg() {
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
             <img
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="https://randomuser.me/api/portraits/thumb/women/10.jpg"
               alt=""
               className="widgetLgImg"
             />
-            <span className="widgetLgName">Susan Carol</span>
+            <span className="widgetLgName">Nancy Banin</span>
           </td>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
+          <td className="widgetLgDate">2 Jun 2022</td>
+          <td className="widgetLgAmount">$75.00</td>
           <td className="widgetLgStatus">
             <Button type="Pending" />
           </td>
@@ -62,14 +62,14 @@ export default function WidgetLg() {
         <tr className="widgetLgTr">
           <td className="widgetLgUser">
             <img
-              src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="https://randomuser.me/api/portraits/thumb/women/1.jpg"
               alt=""
               className="widgetLgImg"
             />
-            <span className="widgetLgName">Susan Carol</span>
+            <span className="widgetLgName">Lopez Lolita</span>
           </td>
-          <td className="widgetLgDate">2 Jun 2021</td>
-          <td className="widgetLgAmount">$122.00</td>
+          <td className="widgetLgDate">9 Jun 2021</td>
+          <td className="widgetLgAmount">$80.00</td>
           <td className="widgetLgStatus">
             <Button type="Approved" />
           </td>
