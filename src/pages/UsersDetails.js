@@ -64,6 +64,7 @@ export default function User() {
       <div className="userContainer container-fluid">
         <div className="userShow row">
           <div className="userShowTop col-6">
+            <div className="userShowImageNameDiv">
             <div>  <img
               src={detailUser?.picture?.large}
               alt=""
@@ -77,6 +78,8 @@ export default function User() {
               <span className="userShowUsername">{detailUser?.name?.last}</span>
              
             </div>
+            </div>
+            
             <div className="userShowBottom">
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">

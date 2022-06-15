@@ -40,10 +40,10 @@
     margin-left: 20px;
   }
   
-  /* .userShowTop {
+  .userShowImageNameDiv{
     display: flex;
     align-items: center;
-  } */
+  } 
   
   .userShowImg {
     width: 40px;
