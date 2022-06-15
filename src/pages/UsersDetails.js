@@ -64,11 +64,12 @@ export default function User() {
       <div className="userContainer container-fluid">
         <div className="userShow row">
           <div className="userShowTop col-6">
-          <img
+            <div>  <img
               src={detailUser?.picture?.large}
               alt=""
               className="userShowImg"
-            />
+            /></div>
+        
             <div className="userShowTopTitle">
             <span className="userShowUserTitle">
                 {detailUser?.name?.first}
@@ -76,8 +77,7 @@ export default function User() {
               <span className="userShowUsername">{detailUser?.name?.last}</span>
              
             </div>
-          </div>
-          <div className="userShowBottom">
+            <div className="userShowBottom">
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
@@ -103,8 +103,9 @@ export default function User() {
                 {detailUser?.location?.city} | {detailUser?.location?.country}</span>
             </div>
           </div>
-        </div>
-        <div className="userUpdate col-6">
+          </div>
+
+          <div className="userUpdate col-6">
           <span className="userUpdateTitle">More Info</span>
           <div className="userShowBottom">
             <div className="userUpdateLeft">
@@ -153,6 +154,8 @@ export default function User() {
             </div>
           </div>
         </div>
+        </div>
+
       </div>
     </div>
   );

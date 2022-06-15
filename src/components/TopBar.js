@@ -7,7 +7,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo"> Roberts Com Users</span>
+          <span className="logo"> Users App</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
