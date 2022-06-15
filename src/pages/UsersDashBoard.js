@@ -1,8 +1,6 @@
-import React, {useContext, useState,useEffect} from 'react'
+import React, {useContext, useState} from 'react'
 import Users from '../components/users';
 import Pagination from '../components/Pagination';
-import axios from 'axios';
-import { USER_PER_PAGE } from "../utils/constants";
 import {GlobalState} from '../GlobalState'
 
 function UserDashBoard() {
@@ -25,10 +23,10 @@ function UserDashBoard() {
   }
 
   return (
-    <div className='col-10' >
-      <h4>Users Dashboard</h4>
-      {/* <button onClick={handlePrevious} >Show Previous results</button> */}
-      <Pagination totalPages={totalPages} handleClick={handleClick} />
+    <div className='col-10 container-fluid'  >
+      <div className='row' ><h4 className = "col-3">Users Dashboard</h4><Pagination className = "col-8 "totalPages={totalPages} handleClick={handleClick} /></div>
+      
+      
      
       {loading ? <p>Loading...</p> : <>
       <table class="table table-striped">

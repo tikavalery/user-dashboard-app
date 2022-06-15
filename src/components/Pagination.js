@@ -5,14 +5,18 @@ const Pagination = ({ totalPages, handleClick }) => {
   console.log(pages)
   return (
     <div>
-      { pages.map(num => (
-        <button
-          key={num}
-          onClick={() => handleClick(num)}
-        >{num}</button>
-      )) }
+      <ul class="pagination">
+        {pages.map(num => (
+      
+         <li className = "page-item"  key={num}
+         onClick={() => handleClick(num)}><a class="page-link" href="#">{num}</a></li>
+ 
+      ))}
+      </ul>  
     </div>
   )
 }
 
 export default Pagination
+
+

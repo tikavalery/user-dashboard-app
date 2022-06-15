@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import Chart from "../components/Chart";
 import { userData } from "../components/dummyData";
-import UserDashBoard from "./UsersDashBoard";
 import WidgetSm from "../components/WidgetSm";
 import WidgetLg from "../components/WidgetLg";
 import "./Home.css"

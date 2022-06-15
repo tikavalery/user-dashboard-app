@@ -2,16 +2,16 @@ import React, { useContext, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import {GlobalState} from '../GlobalState'
-
+import WcIcon from '@material-ui/icons/Wc';
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
+import CakeIcon from '@material-ui/icons/Cake';
+import HomeIcon from '@material-ui/icons/Home';
 import {
-  CalendarToday,
   LocationSearching,
   MailOutline,
   PermIdentity,
-  PhoneAndroid,
-  Publish,
+  PhoneAndroid
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
 import "./UsersDetails.css";
 
 
@@ -21,7 +21,7 @@ export default function User() {
   const state = useContext(GlobalState)
   const [users] = state.users
   const [detailUser, setDetailUser] = useState({})
- console.log(users)
+
 
 
   useEffect(() => {
@@ -54,9 +54,9 @@ console.log("Inside useeffect details")
   return (
     <div className="user col-10">
 
-      <div className="userContainer">
-        <div className="userShow">
-          <div className="userShowTop">
+      <div className="userContainer container-fluid">
+        <div className="userShow row">
+          <div className="userShowTop col-6">
             <img
 
               src="https://randomuser.me/api/portraits/thumb/men/15.jpg"
@@ -76,8 +76,7 @@ console.log("Inside useeffect details")
               <span className="userShowUserTitle"> Username :</span>
               <span className="userShowInfoTitle">Display username here</span>
             </div>
-        
-            <span className="userShowTitle">Contact Details</span>
+      
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
               <span className="userShowUserTitle"> Phone number :</span>
@@ -94,34 +93,34 @@ console.log("Inside useeffect details")
             </div>
           </div>
         </div>
-        <div className="userUpdate">
+        <div className="userUpdate col-6">
           <span className="userUpdateTitle">More Info</span>
           <div className="userShowBottom">
             <div className="userUpdateLeft">
             <span className="userShowTitle">More Info</span>
               
             <div className="userShowInfo">
-              <MailOutline className="userShowIcon" />
+              <WcIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Gender</span>
               <span className="userShowInfoTitle">Display gender here </span>
             </div>
             <div className="userShowInfo">
-              <PhoneAndroid className="userShowIcon" />
+              <AccessTimeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Time Zone :</span>
               <span className="userShowInfoTitle">Display Time Zone Location here</span>
             </div>
             <div className="userShowInfo">
-              <CalendarToday className="userShowIcon" />
+              <CakeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> D.o.B :</span>
               <span className="userShowInfoTitle">Display date of birth here</span>
             </div>
             <div className="userShowInfo">
-              <CalendarToday className="userShowIcon" />
+              <CakeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Time to birthday</span>
               <span className="userShowInfoTitle">Display time remaining to persons birthday</span>
             </div>
             <div className="userShowInfo">
-              <CalendarToday className="userShowIcon" />
+              <HomeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Adress</span>
               <span className="userShowInfoTitle">Display complete address</span>
             </div>

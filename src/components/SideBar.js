@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 export default function SideBar() {
   return (
-    <div className="sidebar col-2">
+    <div className="sidebar col-2 ">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">User Menu</h3>
