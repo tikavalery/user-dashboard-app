@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
+import moment from "moment";
 import {GlobalState} from '../GlobalState'
 import WcIcon from '@material-ui/icons/Wc';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
@@ -12,6 +12,7 @@ import {
   PermIdentity,
   PhoneAndroid
 } from "@material-ui/icons";
+
 import "./UsersDetails.css";
 
 
@@ -23,49 +24,56 @@ export default function User() {
   const [detailUser, setDetailUser] = useState({})
 
 
+  let daysLeft =
+    " (in " +
+    moment(moment(detailUser?.dob?.date))
+      .add(
+        moment(moment().format("YYYY-MM-DD")).diff(
+          moment(detailUser?.dob?.date),
+          "years"
+        ) + 1,
+        "years"
+      )
+      .diff(moment().format("YYYY-MM-DD"), "days") +
+    " days)";
 
   useEffect(() => {
+    if (params.id) {
+      users.forEach((dat) => {
+        let normalId = dat.login.uuid.replace(/\s+/g, "");
+        let paramId = params.id.replace(/\s+/g, "");
 
-console.log("Inside useeffect details")
-        if(params.id){
-            
-          users.forEach(dat => {
-      
-            let normalId = dat.login.uuid.replace(/\s+/g, '')
-            let paramId = params.id.replace(/\s+/g, '')
- 
-      
-           
-            if (normalId === paramId) {
-              setDetailUser(dat)
-    
-           
-            }
-            
-         
-            })
+        if (normalId === paramId) {
+          setDetailUser(dat);
+
+          // setUser(dat)
         }
-        
-  }, [params.id,detailUser])
+      });
+    }
+  }, [params.id, detailUser]);
 
-   if(detailUser === undefined) return null;
- console.log(detailUser)
-
+  if (detailUser === undefined) return null;
+  const daysRemaining = (date) => {
+    var eventdate = moment(date);
+    var todaysdate = moment();
+    return eventdate.diff(todaysdate, "days");
+  };
   return (
     <div className="user col-10">
 
       <div className="userContainer container-fluid">
         <div className="userShow row">
           <div className="userShowTop col-6">
-            <img
-
-              src="https://randomuser.me/api/portraits/thumb/men/15.jpg"
+          <img
+              src={detailUser?.picture?.large}
               alt=""
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUserTitle">Display first name Here</span>
-              <span className="userShowUsername">Display Last Name Here</span>
+            <span className="userShowUserTitle">
+                {detailUser?.name?.first}
+              </span>
+              <span className="userShowUsername">{detailUser?.name?.last}</span>
              
             </div>
           </div>
@@ -74,22 +82,25 @@ console.log("Inside useeffect details")
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
               <span className="userShowUserTitle"> Username :</span>
-              <span className="userShowInfoTitle">Display username here</span>
+              <span className="userShowInfoTitle">
+                {detailUser?.login?.username}
+              </span>
             </div>
       
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
               <span className="userShowUserTitle"> Phone number :</span>
-              <span className="userShowInfoTitle">+1 Display Phone Number Here</span>
+              <span className="userShowInfoTitle">{detailUser?.phone}</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
               <span className="userShowUserTitle"> Email :</span>
-              <span className="userShowInfoTitle">Display Email Here</span>
+              <span className="userShowInfoTitle">{detailUser?.email}</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle"> Display City name here | Display country name here</span>
+              <span className="userShowInfoTitle"> {" "}
+                {detailUser?.location?.city} | {detailUser?.location?.country}</span>
             </div>
           </div>
         </div>
@@ -102,34 +113,38 @@ console.log("Inside useeffect details")
             <div className="userShowInfo">
               <WcIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Gender</span>
-              <span className="userShowInfoTitle">Display gender here </span>
+              <span className="userShowInfoTitle">{detailUser?.gender}</span>
             </div>
             <div className="userShowInfo">
               <AccessTimeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Time Zone :</span>
-              <span className="userShowInfoTitle">Display Time Zone Location here</span>
+              <span className="userShowInfoTitle">{detailUser?.location?.timezone?.description}</span>
             </div>
             <div className="userShowInfo">
               <CakeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> D.o.B :</span>
-              <span className="userShowInfoTitle">Display date of birth here</span>
+              <span className="userShowInfoTitle">    {moment(detailUser?.dob?.date)?.format("L")}{" "}
+                  {`(${detailUser?.dob?.age} years old)`}</span>
             </div>
             <div className="userShowInfo">
               <CakeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Time to birthday</span>
-              <span className="userShowInfoTitle">Display time remaining to persons birthday</span>
+              <span className="userShowInfoTitle">{daysLeft}</span>
             </div>
             <div className="userShowInfo">
               <HomeIcon className="userShowIcon" />
               <span className="userShowUserTitle"> Adress</span>
-              <span className="userShowInfoTitle">Display complete address</span>
+              <span className="userShowInfoTitle">             {detailUser?.location?.street.number},{" "}
+                  {detailUser?.location?.street.name} |{" "}
+                  {detailUser?.location?.city} | {detailUser?.location?.state} |{" "}
+                  {detailUser?.location?.country}</span>
             </div>
             </div>
             <div className="userUpdateRight">
               <div className="userUpdateUpload">
-                <img
+              <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src={detailUser?.picture?.large}
                   alt=""
                 />
           
