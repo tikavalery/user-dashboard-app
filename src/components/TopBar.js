@@ -7,7 +7,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo"> Users App</span>
+          <span className="logo"> Roberts Com Users</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
@@ -21,7 +21,7 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
-          <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+          <img src="https://randomuser.me/api/portraits/thumb/women/1.jpg" alt="" className="topAvatar" />
         </div>
       </div>
     </div>

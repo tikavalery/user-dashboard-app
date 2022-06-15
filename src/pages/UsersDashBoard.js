@@ -59,17 +59,13 @@ function UserDashBoard() {
   };
 
   return (
-    <div className='col-10 container-fluid'  >
-      <div className='row' >
-        {/* <h4 className = "col-2">Dashboard</h4> */}
-        {searchText.length > 0 ? null : (
+         <div className='col-10 container-fluid'  >
+         <div className='row' >
+           {searchText.length > 0 ? null : (
              <Pagination className = "col-6 "totalPages={totalPages} handleClick={handleClick} handleNext={handleNext} handlePrevious ={handlePrevious} />
           )}
        
-        <div className="search-container col-3">
-          {/* <label className="labelSearch" for="fname">
-            Search:{" "}
-          </label> */}
+          <div className="search-container col-3">
           <span>
             <input
             placeholder ="Search"
@@ -94,37 +90,36 @@ function UserDashBoard() {
               name="fname"
             />
           </span>
-        </div>
+          </div>
    
            
-        <div className="container-fluid">
-        <div className ="row"> 
-         <div className = "col-3"><p>Page {page}</p></div>
+          <div className="container-fluid">
+              <div className ="row"> 
+            <div className = "col-3"><p>Page {page}</p></div>
           <div className ="col-3"> <button style={{ marginLeft: "5px" }} onClick={handleRecentViewedPerson}>  Show Recently Viewed Person</button>
           </div>
         
-          </div>
-        </div>
+           </div>
+            </div>
 
-        </div>
+           </div>
         
       
       
      
-      {loading ? <p>Loading...</p> : <>
-      <table class="table table-striped">
-<thead>
-  <tr>
-    <th>Fullname</th>
-    <th>Phone</th>
+            {loading ? <p>Loading...</p> : <>
+             <table class="table table-striped">
+            <thead>
+              <tr>
+               <th>Fullname</th>
+              <th>Phone</th>
               <th>Email</th>
               <th>City</th>
-    <th>Gender</th>
-           
+              <th>Gender</th>
               <th>View More</th>
-  </tr>
-</thead>
-<tbody>
+               </tr>
+            </thead>
+            <tbody>
                <Users
                 users={allUsers}
                 page={page}
