@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pagination = ({ totalPages, handleClick,handleNext,handlePrevious }) => {
   const pages = [...Array(totalPages).keys()].map(num => num + 1);
-  console.log(pages)
+  // console.log(pages)
   return (
     <div>
       <ul class="pagination">

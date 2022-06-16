@@ -23,11 +23,15 @@ function UserDashBoard() {
     setSearchData(users);
   }, [state?.users]);
   const handleSearch = (value) => {
+    // console.log(value)
+    // console.log(searchData)
     const newData = searchData.filter((user) => {
       const itemData = ` ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}`;
-
+        console.log(itemData)
       const textData = value.toUpperCase();
-      console.log("Result", itemData.indexOf(textData) > -1);
+      console.log(textData)
+      console.log(itemData.indexOf(textData))
+      // console.log("Result", itemData.indexOf(textData) > -1);
       return itemData.indexOf(textData) > -1;
     });
 
@@ -46,7 +50,7 @@ function UserDashBoard() {
   };
 
   const handleNext = () => {
-    if (page > 1) {
+    if ((page > 1 || page ===1 ) && page < 10) {
       setPage(page + 1);
     }
   };
@@ -72,6 +76,7 @@ function UserDashBoard() {
               className="user-search-input"
               onPaste={(e) => {
                 navigator.clipboard.readText().then((text) => {
+                  console.log(text)
                   e.preventDefault();
 
                   setSearchText(text);
