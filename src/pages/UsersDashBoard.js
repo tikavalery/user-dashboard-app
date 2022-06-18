@@ -55,10 +55,15 @@ function UserDashBoard() {
     }
   };
   const handleRecentViewedPerson = (num) => {
+    const recentlyViewd2 = localStorage
+    .getItem("recentlyViewed")
+
     const recentlyViewd = localStorage
       .getItem("recentlyViewed")
       .replace(/^"(.+(?="$))"$/, "$1");
     console.log("recentlyViewd", recentlyViewd);
+    console.log("recentlyViewd2", recentlyViewd2);
+
     history.push(`/userdetails/${recentlyViewd} `);
   };
 

@@ -23,7 +23,8 @@ export default function User() {
   const [users] = state.users
   const [detailUser, setDetailUser] = useState({})
 
-
+  console.log(detailUser?.dob?.date)
+    
   let daysLeft =
     " (in " +
     moment(moment(detailUser?.dob?.date))
