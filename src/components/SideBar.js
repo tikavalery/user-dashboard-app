@@ -31,13 +31,7 @@ export default function SideBar() {
               User Dashboard
             </li>
             </Link>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle"></h3>
-          <ul className="sidebarList">
-       
-              <li className="sidebarListItem">
+            <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Analytics
               </li>
@@ -49,6 +43,7 @@ export default function SideBar() {
             </li>
           </ul>
         </div>
+
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">

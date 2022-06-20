@@ -1,13 +1,10 @@
 .sidebar {
-    /* flex: 1;
-    height: calc(100vh - 50px);
-    background-color: rgb(251, 251, 255); */
     position: sticky;
-    top: 50px;
+
   }
   
   .sidebarWrapper {
-    padding: 5px;
+    padding: 3px;
     color: #555;
   }
   
@@ -23,14 +20,22 @@
   .sidebarList {
     list-style: none;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
+  }
+
+  .link:link{
+    text-decoration: none!important;
   }
   
   .sidebarListItem {
     padding: 5px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
+    margin: 5px 0;
     border-radius: 10px;
+   
   }
   
   .sidebarListItem.active,

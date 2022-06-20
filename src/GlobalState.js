@@ -18,11 +18,12 @@ export const DataProvider = ({children}) =>{
       
         const fetchUsers = async () => {
           setLoading(true);
-            const res = await axios.get('https://randomuser.me/api/?results=100');
+            const res = await axios.get('https://randomuser.me/api/?results=105');
        
           setLoading(false);
           window.localStorage.setItem("userdata", JSON.stringify(res))
           setUsers(res.data.results);
+          
             
           setTotalPages(Math.ceil(res.data.results.length / USER_PER_PAGE));
         };
@@ -38,7 +39,7 @@ export const DataProvider = ({children}) =>{
    
     }
 
-
+     
 
     return (
         <GlobalState.Provider value={state}>
