@@ -21,6 +21,7 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
+
           <img src="https://randomuser.me/api/portraits/thumb/women/1.jpg" alt="" className="topAvatar" />
         </div>
       </div>

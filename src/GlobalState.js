@@ -18,7 +18,7 @@ export const DataProvider = ({children}) =>{
       
         const fetchUsers = async () => {
           setLoading(true);
-            const res = await axios.get('https://randomuser.me/api/?results=105');
+            const res = await axios.get('https://randomuser.me/api/?results=100');
        
           setLoading(false);
           window.localStorage.setItem("userdata", JSON.stringify(res))

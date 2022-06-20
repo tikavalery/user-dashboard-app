@@ -8,6 +8,7 @@
   .widgetLgTitle {
     font-size: 22px;
     font-weight: 600;
+
   }
   
   .widgetLgTable{
@@ -22,7 +23,7 @@
   .widgetLgUser{
     display: flex;
     align-items: center;
-    font-weight: 600;
+    font-weight: 450;
   }
   
   .widgetLgImg {
@@ -34,7 +35,7 @@
   }
   
   .widgetLgDate,.widgetLgAmount{
-    font-weight: 300;
+    font-weight: 450;
   }
   
   .widgetLgButton {

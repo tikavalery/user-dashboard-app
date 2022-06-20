@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useHistory } from "react-router-dom";
-import moment from "moment";
+import "./User.css"
 
 const User = ({ user }) => {
   const history = useHistory();
