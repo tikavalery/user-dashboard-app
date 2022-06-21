@@ -23,7 +23,16 @@ export default function User() {
   const [users] = state.users
   const [detailUser, setDetailUser] = useState({})
 
-  console.log(detailUser?.dob?.date)
+  // let dateOfBirth = moment(detailUser?.dob?.date)
+  // let todayDate = moment(moment())
+  // let ageToday = todayDate.diff(dateOfBirth, "years")
+  // let ageOnNextDob = ageToday + 1
+  // let dateObNextBirthDob = dateOfBirth.add(ageOnNextDob, "years")
+  // let dayLefttoDob = dateObNextBirthDob.diff(todayDate,"days")
+
+  // console.log(dayLefttoDob)
+  
+
     
   let daysLeft =
     " (in " +

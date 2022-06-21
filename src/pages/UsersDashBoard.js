@@ -18,20 +18,21 @@ function UserDashBoard() {
   const [allUsers, setAllUsers] = useState([]);
   const history = useHistory();
 
+
+
   useEffect(() => {
     setAllUsers(users);
     setSearchData(users);
   }, [state?.users]);
+
+  
   const handleSearch = (value) => {
-    // console.log(value)
-    // console.log(searchData)
+
     const newData = searchData.filter((user) => {
       const itemData = ` ${user.name.first.toUpperCase()} ${user.name.last.toUpperCase()}`;
-        console.log(itemData)
+
       const textData = value.toUpperCase();
-      console.log(textData)
-      console.log(itemData.indexOf(textData))
-      // console.log("Result", itemData.indexOf(textData) > -1);
+
       return itemData.indexOf(textData) > -1;
     });
 
@@ -50,19 +51,18 @@ function UserDashBoard() {
   };
 
   const handleNext = () => {
-    if ((page > 1 || page ===1 ) && page < 10) {
+    if ((page > 1 || page ===1 ) && page < totalPages) {
       setPage(page + 1);
     }
   };
   const handleRecentViewedPerson = (num) => {
-    const recentlyViewd2 = localStorage
-    .getItem("recentlyViewed")
+
 
     const recentlyViewd = localStorage
       .getItem("recentlyViewed")
       .replace(/^"(.+(?="$))"$/, "$1");
     console.log("recentlyViewd", recentlyViewd);
-    console.log("recentlyViewd2", recentlyViewd2);
+ 
 
     history.push(`/userdetails/${recentlyViewd} `);
   };
@@ -81,7 +81,7 @@ function UserDashBoard() {
               className="user-search-input"
               onPaste={(e) => {
                 navigator.clipboard.readText().then((text) => {
-                  console.log(text)
+              
                   e.preventDefault();
 
                   setSearchText(text);
